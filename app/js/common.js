@@ -1,6 +1,8 @@
 
 
 $(function () {
+	// document.addEventListener('touchmove', function(e) {e.preventDefault();}, false);
+	// document.ontouchmove = function(e) {e.preventDefault()};
 
 	$('.admin-nav-menu-button').click(function () {
 		$(this).toggleClass('admin-nav-button-active')
@@ -76,28 +78,7 @@ $(function () {
 	});
 	// End
 
-	// Button to the top of the page
 
-	if ($(this).scrollTop() > 350) {
-		$('.button-up').fadeIn();
-	} else {
-		$('.button-up').fadeOut();
-	}
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 350) {
-			$('.button-up').fadeIn();
-		} else {
-			$('.button-up').fadeOut();
-		}
-	});
-
-	$('.button-up').click(function () {
-		$('body,html').animate({
-			scrollTop: 0
-		}, 500);
-		return false;
-	});
-	// End
 
 	// mobile-menu slide left-right
 
@@ -153,34 +134,161 @@ $(function () {
 
 	// end
 
+	// Button to the top of the page
+
+	if ($(this).scrollTop() > 350) {
+		$('.button-up').fadeIn();
+	} else {
+		$('.button-up').fadeOut();
+	}
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 350) {
+			$('.button-up').fadeIn();
+		} else {
+			$('.button-up').fadeOut();
+		}
+	});
+
+	$('.button-up').click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 500);
+		return false;
+	});
+	// End
+
 	$('.accordeon').click(function () {
 		$(this).next().toggleClass('accordeon-show');
 	});
-
 	//colapse
 
 	$('.filter-title').click(function () {
 		$(this).parent().toggleClass('active')
 	});
+
+// scroll-lock v1
+	// const bodyScrollLock = require('body-scroll-lock');
+	// const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+	// const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
+	// const targetElement = document.querySelector(".shopping-cart")
+
+	// $('.btn-shopping-cart').click(function () {
+	// 	$('.shopping-cart').removeClass('close')
+	// 	$('.white-box').addClass('active')
+	// 	disableBodyScroll(targetElement);
+	// });
+
+	// $('.close-shop-cart').click(function () {
+	// 	$('.shopping-cart').addClass('close')
+	// 	$('.white-box').removeClass('active')
+	// 	enableBodyScroll(targetElement);
+	// });
+
+	// $(document).keyup(function (e) {
+	// 	if (e.keyCode == 27) {
+	// 		$('.shopping-cart').addClass('close')
+	// 		$('.white-box').removeClass('active')
+	// 		enableBodyScroll(targetElement);
+	// 	}
+	// })
+	// $(document).mouseup(function (e) {
+	// 	var cart = $('.shopping-cart');
+	// 	if (cart.has(e.target).length === 0) {
+	// 		cart.addClass('close');
+	// 		$('.white-box').removeClass('active');
+	// 		enableBodyScroll(targetElement);
+	// 	}
+	// });
+
+// end v1
+
+// scroll-lock v2
+	// scroll-bar width
+	var div = document.createElement('div');
+
+	div.style.overflowY = 'scroll';
+	div.style.width = '50px';
+	div.style.height = '50px';
+	div.style.visibility = 'hidden';
+
+	document.body.appendChild(div);
+	var scrollWidth = div.offsetWidth - div.clientWidth;
+	document.body.removeChild(div);
+
+	// end
+	function bodyScrollLock() {
+		var hideBodyScroll = $(window).scrollTop()
+		var returnScroll
+		$('.btn-shopping-cart').click(function () {
+			$('.shopping-cart').removeClass('close')
+			$('html').addClass('no-scroll')
+			$('.white-box').addClass('active')
+			$('.no-scroll-body').css({
+				'position': 'fixed',
+				'top': '-'+hideBodyScroll+'px',
+				// 'right': '0',
+				// 'padding-right': scrollWidth+'px',
+			});
+			returnScroll = hideBodyScroll
+		});
+		$('.close-shop-cart').click(function () {
+			$('.shopping-cart').addClass('close')
+			$('html').removeClass('no-scroll')
+			$('.white-box').removeClass('active')
+			$('.no-scroll-body').css({
+				'position': 'relative',
+				'top': '0',
+				// 'padding-right': '0',
+			});
+			$('body,html').scrollTop(returnScroll);
+		});
+		$(document).keyup(function (e) {
+			if (e.keyCode == 27) {
+				$('.shopping-cart').addClass('close')
+				$('html').removeClass('no-scroll')
+				$('.white-box').removeClass('active')
+			$('.no-scroll-body').css({
+				'position': 'relative',
+				'top': '0',
+				'padding-right': '0',
+			});
+			$('body,html').scrollTop(returnScroll);
+			}
+		})
+		$('.white-box').click(function () {
+			$('.shopping-cart').addClass('close');
+			$('html').removeClass('no-scroll');
+			$(this).removeClass('active');
+			$('.no-scroll-body').css({
+				'position': 'relative',
+				'top': '0',
+				'padding-right': '0',
+			});
+			$('body,html').scrollTop(returnScroll);
+		});
+	}
+	bodyScrollLock();
+	$(window).scroll(bodyScrollLock);
 	$('.btn-shopping-cart').click(function () {
-		$('.shopping-cart').removeClass('close')
-		$('html').addClass('no-scroll')
+		$('.shopping-cart').removeClass('close');
+		$('html').addClass('no-scroll');
 		$('.white-box').addClass('active')
 	});
 
 	$('.close-shop-cart').click(function () {
-		$('.shopping-cart').addClass('close')
-		$('html').removeClass('no-scroll')
+		$('.shopping-cart').addClass('close');
+		$('html').removeClass('no-scroll');
 		$('.white-box').removeClass('active')
 	});
 
 	$(document).keyup(function (e) {
 		if (e.keyCode == 27) {
-			$('.shopping-cart').addClass('close')
-			$('html').removeClass('no-scroll')
+			$('.shopping-cart').addClass('close');
+			$('html').removeClass('no-scroll');
 			$('.white-box').removeClass('active')
 		}
-	})
+	});
 	$(document).mouseup(function (e) {
 		var cart = $('.shopping-cart');
 		if (cart.has(e.target).length === 0) {
@@ -189,21 +297,52 @@ $(function () {
 			$('.white-box').removeClass('active');
 		}
 	});
-});
 
+// end v2
+})
 
-$('.add-category').parent().append('<li class="list-group-item add-cat-form mt-2 mb-3"><form action="" class=""><input type="text" placeholder="Новая категория" name="new-category"><button type="submit" class="btn btn-purple btn-purple-large">Добавить</button></form></li>')
+$('.add-category').parent().append('<li class="list-group-item add-cat-form mt-3 mb-3"><form action="" class=""><input class="new-input" type="text" placeholder="Новая категория" name="new-category"><button class="btn btn-purple btn-purple-large btn-add">Добавить</button></form></li>')
+$('.add-sub-category').parent().append('<li class="list-group-item add-cat-form mt-3 mb-3"><form action="" class=""><input class="new-input" type="text" placeholder="Новая категория" name="new-category"><button class="btn btn-purple btn-purple-large btn-add">Добавить</button></form></li>')
+// $('.add-category').append('<form action="" class="add-cat-form"><input class="new-input" type="text" placeholder="Новая категория" name="new-category"><button class="btn btn-purple btn-purple-large btn-add">Добавить</button></form>')
 $(document).on('click', '.add-category', (function () {
-	$(this).toggleClass('add-category-active');
+	$(this).addClass('add-category-close');
+	$(this).siblings('.add-cat-form').addClass('add-cat-form-active')
+	$('.add-cat-form-active').children().children('input').focus();
 }));
+$(document).on('click', '.add-sub-category', (function () {
+	$(this).addClass('add-category-close');
+	$(this).siblings('.add-cat-form').addClass('add-cat-form-active')
+	$('.add-cat-form-active').children().children('input').focus();
+}));
+	var numberI = 1
+$(document).on('click', '.btn-add', (function (event) {
+	event.preventDefault();
+	$('.add-category').removeClass('add-category-close')
+	$('.add-sub-category').removeClass('add-category-close')
+	$('.add-cat-form').removeClass('add-cat-form-active')
+	var newCatOrBrand = $(this).siblings('.new-input').val();
+	$(this).parent().parent().siblings('.add-category').before('<li class="list-group-item for-choice li-last">' +newCatOrBrand+ '</li>');
+	$(this).parent().parent().siblings('.add-sub-category').before('<li class="list-group-item category-title"><a data-toggle="collapse" href="#collapse-n-'+numberI+'" class="collapsed">' +newCatOrBrand+ '</a><ul id="collapse-n-'+numberI+'" class="panel-collapse collapse to-add-new-li"><li class="add-category list-group-item mt-3 mb-3 btn-purple-inverse">Добавить подкатегорию</li><li class="list-group-item add-cat-form mt-3 mb-3"><form action="" class=""><input class="new-input" type="text" placeholder="Новая категория" name="new-category"><button class="btn btn-purple btn-purple-large btn-add">Добавить</button></form></li></ul></li>');
+	// console.log(numberI)
+	numberI = numberI + 1;
+	$(this).siblings('.new-input').val('');
+	$('.add-category').removeClass('add-category-active')
+}))
+$(document).on('mouseup', (function(e) {
+	var div = $('.add-cat-form-active');
+	if (!div.is(e.target) && div.has(e.target).length === 0) {
+		$('.add-category').removeClass('add-category-close')
+		$('.add-sub-category').removeClass('add-category-close')
+		$('.add-cat-form').removeClass('add-cat-form-active')
+	}
+}));
+// $(document).on('mouseup', (function(e) {
+// 	var div = $('h2');
+// 	if (div.is(e.target) && div.has(e.target).length === 0) {
+// 		alert(numberI)
+// 	}
+// }));
 
-// $(document).on("click", ".add-category", function() {
-// 	alert("123")
-// });
-
-// $('.test').click(function() {
-// 	$('.test-block').append('<form action="" class="catalog-search mb-3"><input type="search" placeholder="Запрос" name="catalog-search"><button type="submit" class="btn btn-purple">Применить</button></form>')
-// });
 
 var toggler = document.getElementsByClassName("caret");
 var i;

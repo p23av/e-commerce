@@ -236,7 +236,7 @@
 		font-size: 1rem
 .file-drop-zone
 	background-color: #fff
-.add-category
+.add-category, .add-sub-category
 	// background-color: #ccc
 	position: relative
 	height: 40px
@@ -244,10 +244,13 @@
 	line-height: 40px
 	z-index: 20
 	cursor: pointer
+.add-category-close
+	display: none
 .add-cat-form
 	display: none
 	padding-left: 0 !important
-.add-category-active + .add-cat-form
+// .add-category-active + .add-cat-form
+.add-cat-form-active
 	// display: block
 	display: flex
 	align-items: center
@@ -297,7 +300,7 @@
 				content: '\f078'
 				font-family: "Font Awesome 5 Free"
 				font-weight: 900
-				padding-right: 5px
+				// padding-right: 5px
     			// transform: rotate(90deg)
 			&:hover
 				color: #000
@@ -382,7 +385,7 @@ select::-ms-expand
 .size-wrapper
 	padding: 0 10px
 	// background-color:#fff
-	height: 40px
+	// height: 40px
 	span
 		padding-right: 15px
-
+		white-space: nowrap
