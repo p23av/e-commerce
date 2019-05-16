@@ -1,0 +1,89 @@
+.shopping-cart
+	position: fixed
+	right: 0
+	top: 0
+	z-index: 210
+	background: #fff
+	width: 400px
+	height: 100vh
+	box-shadow: 0 0px 10px 0px rgba(0,0,0,.25)
+	padding: 12px 20px 
+	transition: transform .250s ease-in-out
+	.title
+		text-align: center
+	&-body
+		font-size: 1.2em
+		height: 100%
+		padding-bottom: 200px
+		overflow: scroll
+		&::-webkit-scrollbar
+			width: 0px
+			background: transparent
+	&-head
+		padding-bottom: 12px
+		border-bottom: 1px solid #e8e8e8
+		margin-bottom: 20px
+		.close-shop-cart
+			border: none
+	&-footer
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 0 20px 20px 20px
+		border-top: 1px solid #e8e8e8
+		background: #fff
+		.btn-purple
+			margin-top: 20px
+			margin-bottom: 12px
+			box-sizing: content-box
+			height: 50px
+	&-total
+		margin-top: 8px
+		font-size: 1.2em
+	.close.btn-purple
+		border: none
+		align-self: flex-end
+	&.close
+		transform: translateX(100%)
+//checkout-card
+.checkout-card-item
+	border-bottom: 1px solid #e8e8e8
+	padding: 12px 0
+	.image
+		max-width: 120px
+	.description
+		padding: 0 12px
+.card-total
+	.title
+		border-bottom: 1px solid #e8e8e8
+		margin-bottom: 12px
+	.total-price
+		font-size: 24px
+.cart-body-item
+	position: relative
+	padding-bottom: 8px
+	margin-bottom: 12px
+	border-bottom: 1px solid #e8e8e8
+	&:last-child
+		border-bottom: none
+	.del-item
+		position: absolute
+		right: 0
+		top: 0
+		border: none
+		padding: 0px 9px
+		border: none
+	&-image
+		width: 90px
+		flex: 0 0 auto
+	&-description
+		padding: 0 12px
+		flex-grow: 1
+		.title
+			text-align: left
+			padding-right: 22px
+			line-height: 1.2
+			font-size: 14px
+			margin-bottom: 8px
+			line-height: 1.5em

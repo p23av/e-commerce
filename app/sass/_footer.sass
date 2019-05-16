@@ -1,0 +1,108 @@
+
+
+footer
+	padding: 110px 0px 65px
+	background-color: #e9e7e6
+	li
+		margin-top: 10px
+	ul
+		margin: 0
+		padding: 0
+		li
+			list-style-type: none
+			padding: 0
+			a
+				padding-left: 40px
+				position: relative
+.info, .category, .footer-account
+	ul
+		li
+			list-style-type: none
+			padding: 0
+			margin-top: 15px
+			a
+				padding-left: 25px
+				position: relative
+				color: $mainColor
+				font-size: 1rem
+				&:before
+					font-family: "Font Awesome 5 Free"
+					content: '\f054'
+					font-weight: 900
+					position: absolute
+					left: 0
+					transition: 0.2s ease
+					color: #ccc
+				&:hover
+					color: #2f2c2f
+					&:before
+						left: 5px
+
+.contacts, .social
+	h3
+		display: none
+.logo-footer
+	margin-bottom: 20px
+	a
+		height: 100%
+		font-size: 32px
+		img
+			max-width: 100%
+.contacts
+	ul
+		margin: 0 0 20px
+		padding: 0
+		li
+			margin-top: 10px
+			a
+				padding-left: 30px
+				color: #767676
+				&:last-child
+				&:before
+					font-family: "Font Awesome 5 Free"
+					font-weight: 900
+					position: absolute
+					left: 0
+					color: $mainColor
+			&:nth-of-type(1)
+				a:before
+						content: '\f3c5'
+			&:nth-of-type(2)
+				a:before
+						content: '\f095'
+			&:nth-of-type(3)
+				a
+					color: $mainColor
+				a:before
+						content: '\f0e0'
+.social
+	text-align: left
+	ul
+		li
+			display: inline-block
+			margin: 0
+			&:last-child
+				a
+					margin-right: 0
+			a
+				margin-right: 25px
+				padding-left: 0
+				transition: 0.2s ease
+				&:hover
+					color: $mainColor
+				&:before
+					content: ''
+.copyright
+	width: 100%
+	text-align: center
+	padding-top: 48px
+
+.accordeon
+	font-size: 1.4375rem
+	margin-bottom: 1.4375rem
+	& + ul
+		margin-bottom: 20px
+		li:first-child
+			margin-top: 0
+.accordeon-show
+	display: block

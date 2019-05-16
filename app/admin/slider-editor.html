@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Admin - редактор слайдера</title>
+	<!-- plugins:css -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+
+	<!-- endinject -->
+	<!-- plugin css for this page -->
+	<!-- End plugin css for this page -->
+	<!-- inject:css -->
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+	<link rel="stylesheet" href="css/style.min.css">
+	<!-- endinject -->
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+	<div class="container-scroller admin-container">
+		<!-- partial:partials/_navbar.html -->
+		<nav class="admin-nav d-flex align-items-center">
+			<div class="container d-flex align-items-center">
+				<div class="admin-nav-logo">
+					<a href="index.html">Brand garderob</a>
+				</div>
+				<div class="admin-nav-menu d-flex align-items-center justify-content-end">
+					<button class="admin-nav-menu-button d-inline-block d-lg-none">
+						<span></span>
+					</button>
+					<ul class="d-flex admin-nav-menu-ul admin-nav-menu-ul-mobile">
+						<li><a href="product-editor.html">Товары</a></li>
+						<li class="admin-nav-active"><a href="slider-editor.html">Слайдер</a></li>
+						<li><a href="../index.html">Вернуться на сайт</a></li>
+						<li><div class="admin-nav-sm-right d-lg-none"></div></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- partial -->
+		<div class="admin-container-page-body">
+			<div class="main-panel">
+				<div class="container">
+					<h2 class="admin-title-h2">Редактор слайдера</h2>
+					<form action="">
+						<div class="row">
+							<div class="form-item mb-3 col-12">
+								<h3 class="admin-title-h3">Изображение</h3>
+								<input id="input-fas" name="input-fas[]" type="file" class="file" data-browse-on-zone-click="true">
+							</div>
+							<div class="form-item mb-3 col-12">
+								<input type="number" class="uk-input" placeholder="Номер слайда">
+							</div>
+							<div class="form-item mb-3 col-12">
+								<input type="text" class="uk-input" placeholder="Заголовок">
+							</div>
+							<div class="form-item mb-3 col-12">
+								<input type="text" class="uk-input" placeholder="Текст кнопки">
+							</div>
+							<div class="form-item mb-3 col-12">
+								<input type="text" class="uk-input" placeholder="Ссылка кнопки">
+							</div>
+							<div class="col-12">
+								<button type="submit" class="btn btn-purple btn-purple-large btn-save">Сохранить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- content-wrapper ends -->
+				<!-- partial:partials/_footer.html -->
+				<!-- partial -->
+			</div>
+			<!-- main-panel ends -->
+		</div>
+		<footer class="footer">
+			<div class="copyright">
+				<a href="https://www.qubeek.io" target="_blank">Разработка и дизайн - Qubeek Team</a>
+			</div>
+		</footer>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<!-- container-scroller -->
+
+	<!-- plugins:js -->
+	<!-- <script src="vendors/js/vendor.bundle.base.js"></script> -->
+	<!-- <script src="vendors/js/vendor.bundle.addons.js"></script> -->
+	<!-- endinject -->
+	<!-- Plugin js for this page-->
+	<!-- End plugin js for this page-->
+	<!-- inject:js -->
+	<!-- <script src="js/off-canvas.js"></script> -->
+	<!-- <script src="js/misc.js"></script> -->
+	<!-- endinject -->
+	<!-- Custom js for this page-->
+	<!-- <script src="js/dashboard.js"></script> -->
+	<script src="../js/scripts.min.js"></script>
+	<script>
+		$("#input-fas").fileinput({
+			language: "ru",
+			theme: "fas",
+			uploadUrl: "/file-upload-batch/2",
+			allowedFileExtensions: ["jpg", "png", "gif"],
+		});
+	</script>
+	<!-- End custom js for this page-->
+</body>
+
+</html>

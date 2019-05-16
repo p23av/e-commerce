@@ -1,0 +1,388 @@
+
+.container-wrapper-admin
+	max-width: 1440px
+	margin: 0 auto
+	padding: 0 15px
+.admin-container
+	background-color: $backgroundColor
+	// padding: 0 15px
+	position: relative
+	&-page-body
+		// margin-top: 50px
+		padding-top: 160px
+		.container
+			margin-bottom: 110px
+		.title
+			p
+				margin: 0
+		.table
+			th, td
+				padding: 18px 20px
+			td
+				white-space: normal !important
+.admin-title-h2
+	margin-bottom: 16px
+	font-weight: bold
+	h2
+		font-weight: bold
+	p
+		font-weight: normal	
+
+.admin-nav
+	height: 88px
+	width: 100%
+	margin: 0 auto
+	box-shadow: 0 1px 1px #ccc
+	// padding: 0 15px
+	background-color: $navBackgroundColor
+	position: fixed
+	z-index: 200
+	width: 100%
+	&-logo
+		height: 100%
+		a
+			display: inline-block
+			height: 100%
+			font-size: 2rem
+			color: #000
+			line-height: 50px
+			&:hover
+				color: rgb(201, 47, 103)
+				text-decoration: none
+			// img
+			// 	height: 100%
+			// 	width: 100%
+			// 	object-fit: contain
+			// 	object-position: center
+	&-menu
+		height: 100%
+		flex-grow: 1
+		&-button
+			background: none
+			border: none
+			height: 40px
+			width: 40px
+			position: relative
+			span
+				display: inline-block
+				height: 2px
+				width: 100%
+				background-color: #aaa
+				position: absolute
+				top: 50%
+				left: 0
+				&:before, &:after
+					content: ''
+					display: inline-block
+					height: 2px
+					width: 100%
+					background-color: #aaa
+					position: absolute
+					left: 0
+				&:before
+					top: -10px
+				&:after
+					top: 10px
+		&-ul
+			padding: 0
+			margin: 0
+			height: 100%
+			li
+				list-style-type: none
+				padding: 0 10px
+				a
+					font-size: 1.125rem
+					color: #000
+					line-height: 50px
+					display: inline-block
+					width: 100%
+					&:hover
+						text-decoration: none
+						color: $mainAdminColor
+			.admin-nav-active
+				a
+					color: $mainAdminColor
+.admin-nav-sm-right
+	// opacity: 0
+	transition opacity 0.2s ease
+.main-panel
+	width: 100% !important
+	min-height: calc(100vh - 160px)
+// button.is-active + .sidebar
+// 	background-color: red
+.product-active
+	&:before
+		content: '\f111'
+		font-family: "Font Awesome 5 Free"
+		font-weight: 900
+		color: green
+		padding-right: 10px
+.product-removed
+	&:before
+		content: '\f111'
+		font-family: "Font Awesome 5 Free"
+		font-weight: 900
+		color: green
+		color: red
+		padding-right: 10px
+
+.table
+	// min-width: 100%
+	thead
+		background-color: #ddd
+	tbody
+		background-color: #fff
+.page-size
+	padding: 5px 0px
+	span
+		position: relative
+		padding: 0px 10px
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			right: 0
+			bottom: 0
+			left: auto
+			width: 1px
+			background-color: #ccc
+		&:last-child
+			&:after
+				content: ''
+				width: 0
+.pagin
+	ul
+		margin: 0
+		padding: 0
+		li
+			list-style-type: none
+			// padding: 0 10px
+.selector
+	input[type="radio"]
+		display: none
+	input:checked + label
+		border: 1px solid #ccc
+
+.catalog-search
+	display: flex
+	z-index: 25
+	position: relative
+	overflow: hidden
+	margin: 0
+	input, button
+		outline: none
+		margin-bottom: 8px
+		// background-color: transparent
+	input
+		border: 1px solid #ccc
+		height: 42px
+		padding-left: 15px
+		color: #ccc
+		border-radius: 4px
+		flex-grow: 1
+	button
+		height: 42px
+		margin: 0 0 0 20px
+		cursor: pointer
+		// border-left: 1px solid $mainColor
+		border-radius: 4px
+		-webkit-appearance: none
+		outline: 0
+
+.footer
+	position: absolute
+	bottom: 0
+	width: 100%
+	padding: 0 15px 30px
+	background-color: #eee
+
+.btn-purple
+	padding: 0.4em 1em
+	outline: 0
+	margin: 2px 0
+	border-radius: 4px
+	border: solid 1px
+	cursor: pointer
+	border-color: $mainAdminColor
+	color: #fff
+	background-color: $mainAdminColor
+	outline: 0 !important
+	transition: .2s ease-in-out
+	&:active
+		transform: translateY(1px)
+	&:hover
+		border-color: transparent
+		color: #fff
+		background-color: lighten($mainAdminColor , 20%)
+	&-inverse
+		border-color: $mainAdminColor
+		color: $mainAdminColor
+		background-color: #fff
+		&:hover
+			border-color: $mainAdminColor
+			color: $mainAdminColor
+			background-color: #fff
+	&-large
+		width: 200px
+		height: 50px
+		text-transform: uppercase
+	&-medium
+		width: 140px
+		height: 50px
+.copyright
+	text-align: center
+	a
+		color: #000
+		font-size: 1rem
+.file-drop-zone
+	background-color: #fff
+.add-category
+	// background-color: #ccc
+	position: relative
+	height: 40px
+	padding-left: 30px !important
+	line-height: 40px
+	z-index: 20
+	cursor: pointer
+.add-cat-form
+	display: none
+	padding-left: 0 !important
+.add-category-active + .add-cat-form
+	// display: block
+	display: flex
+	align-items: center
+	form
+		display: flex
+		width: 100%
+		input
+			flex-grow: 1
+			padding: 0 30px 0
+			border-radius: 4px
+			border: 1px solid #ccc
+			height: 40px
+		button
+			margin: 0 0 0 1px
+			height: 40px
+
+// .nested 
+// 	display: none
+
+// .active 
+// 	display: block
+.category li ul li
+	cursor: pointer
+.category
+	// background-color: #fff
+	ul, li
+		margin: 0
+		padding: 0
+	li
+		list-style-type: none
+		ul
+			li
+				padding-left: 20px
+				// height: 40px
+				line-height: 40px
+		a
+			color: #000
+			display: inline-block
+			width: 100%
+			height: 40px
+			line-height: 40px
+			padding-left: 10px
+			text-transform: uppercase
+			font-weight: bold
+			// cursor: pointer !important
+			&:before
+				content: '\f078'
+				font-family: "Font Awesome 5 Free"
+				font-weight: 900
+				padding-right: 5px
+    			// transform: rotate(90deg)
+			&:hover
+				color: #000
+				text-decoration: none
+				background: none
+		a.collapsed
+			&:before
+				transform: rotate(-90deg)
+				
+
+.category li a:before
+    margin-right: 5px
+    display: inline-block
+.for-choice
+	// &:before
+	// 	content: ''
+	// 	display: inline-block
+	// 	width: 30px
+.admin-title-h3
+	margin-bottom: 32px
+	margin-top: 32px
+.category-title
+	// background-color: #eee
+	// padding-left: 0	!important
+.custom-select
+	background-image: none !important	
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+	-webkit-appearance: none
+	-moz-appearance: none
+	-ms-appearance: none
+	appearance: none !important
+select::-ms-expand 
+	display: none
+.page-item.active .page-link
+	background-color: $mainAdminColor
+	border-color: $mainAdminColor
+.btn-primary
+	border-color: $mainAdminColor
+	background-color: $mainAdminColor
+	&:hover
+		border-color: $tintAdminColor
+		background-color: $tintAdminColor
+
+.container-checkbox 
+	display: inline-block
+	position: relative
+	padding-left: 25px
+	padding-right: 10px
+	// margin-bottom: 12px
+	cursor: pointer
+	font-size: 16px
+	user-select: none
+	input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+		height: 0
+		width: 0
+		& ~ .checkmark
+			background-color: #ccc
+		&:checked ~ .checkmark
+			background-color: $mainAdminColor
+		&:checked ~ .checkmark:after
+			display: block
+	.checkmark
+		position: absolute
+		top: 5px
+		left: 0
+		height: 18px
+		width: 18px
+		background-color: #eee
+		&:after
+			content: "\f00c"
+			font-family: 'Font Awesome 5 Free',sans-serif
+			font-weight: 900
+			font-size: 10px
+			left: 4px
+			position: absolute
+			color: #fff
+			display: none
+.size-wrapper
+	padding: 0 10px
+	// background-color:#fff
+	height: 40px
+	span
+		padding-right: 15px
+

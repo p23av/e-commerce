@@ -1,0 +1,130 @@
+// @import "vars";
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@include media-breakpoint-down(lg) {
+	
+}
+
+// ≥992px
+@include media-breakpoint-down(md) {
+	.btn-save {
+		width: 100%;
+	}
+	
+	.copyright {
+		padding-top: 12px;
+	}
+	.admin-nav {
+		&-menu {
+			&-ul-mobile {
+				position: fixed;
+				flex-direction: column;
+				top: 88px;
+				left: -500px;
+				transform: translateX(-100%);
+				transition: transform 0.2s ease;
+				width: 200px;
+				bottom: 0;
+				background-color: white;
+				z-index: 20;
+				padding: 0 0 50px;
+				.admin-nav-sm-right {
+					position: absolute;
+					top: 0;
+					left: 100%;
+					height: 100%;
+					background-color: #000;
+					opacity: 0;
+				}
+				li {
+					height: 50px;
+				}
+			}
+		}
+	}
+	.admin-nav-button-active + .admin-nav-menu-ul-mobile {
+		left: 0;
+		transform: translateX(0);
+		.admin-nav-sm-right {
+			opacity: .5;
+			z-index: 100;
+			width: 1000px;
+		}
+	}
+	.pagin-wrapper {
+		flex-direction: column;
+	}
+	.page-size {
+		text-align: center;
+	}
+}
+
+// ≥768px
+@include media-breakpoint-down(sm) {
+	.admin-nav {
+		&-logo {
+			a {
+				font-size: 1.5rem;
+
+			}
+		}
+	}
+	
+	.catalog-search {
+		flex-direction: column;
+		button {
+			width: 100%;	
+			margin-left: 0;
+		}
+	}
+	.add-category-active + .add-cat-form {
+		form {
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+			input {
+				width: 100%;
+				margin-bottom: 8px;
+			}
+			button {
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+	.file-drop-zone-title {
+		padding-top: 10px;	
+		padding-bottom: 10px;
+	}
+}
+
+// ≥576px
+@include media-breakpoint-down(xs) {
+
+}
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
+@include media-breakpoint-up(sm) {
+
+}
+
+// ≤768px
+@include media-breakpoint-up(md) {
+
+}
+
+// ≤992px
+@include media-breakpoint-up(lg) {
+
+}
+
+// ≤1200px
+@include media-breakpoint-up(xl) {
+	
+}

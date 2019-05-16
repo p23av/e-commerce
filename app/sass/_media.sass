@@ -1,0 +1,388 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.banner
+		display: box
+		display: -moz-box
+		display: -webkit-box
+		// flex-wrap: wrap
+		width: 100%
+		padding: 50px
+		[class$="-column"]
+			&:nth-child(1)
+				width: 25.4%
+				-moz-box-ordinal-group: 1
+				-webkit-box-ordinal-group: 1
+				box-ordinal-group: 1
+			&:nth-child(2)
+				width: 30%
+				-moz-box-ordinal-group: 3
+				-webkit-box-ordinal-group: 3
+				box-ordinal-group: 3
+			&:nth-child(3)
+				width: 44.6%
+				-moz-box-ordinal-group: 2
+				-webkit-box-ordinal-group: 2
+				box-ordinal-group: 2
+			&:nth-child(4)
+				display: none
+
+	.html-column-buttons
+		.button
+			width: 140px
+			height: 46px
+	.html-column-description
+		padding: 20px 0
+	.header
+		display: block
+		text-align: center
+		.logo
+			margin: 0 auto 20px
+			display: block
+	.header-nav-1
+		.xl-none
+			display: inline-block
+			color: #111
+			&:hover
+				color: $mainColor
+	.hamburger
+		display: inline-block
+		vertical-align: middle
+	.header-nav-1
+		position: fixed
+		top: 0
+		// bottom: 0
+		left: 0
+		height: 100vh
+		width: 400px
+		max-width: 90%
+		background-color: #eee
+		z-index: 11
+		text-align: left
+		// overflow-y: auto
+		// overflow-x: visible
+		padding: 15px
+		transform: translateX(-400px)
+		left: -400px
+		transition: transform 0.2s ease
+		.li-level-1
+			display: block
+			margin: 0
+			border-bottom: 1px solid #767676
+			position: relative
+			padding-bottom: 0px
+			&:last-child
+				border-bottom: none
+				padding-bottom: 150px
+			.a-level-1
+				display: inline-block
+				width: 100%
+				i
+					font-size: 20px
+					line-height: 56px
+			& > i
+				font-size: 20px
+				vertical-align: middle
+				position: absolute
+				right: 0
+				line-height: 56px
+				margin-right: 20px
+			.level-2
+				position: relative
+				display: none
+				padding: 0 15px
+				left: 0
+				right: 0
+				top: 0
+				background: none
+				box-shadow: none
+				padding-bottom: 15px
+				ul
+					padding: 0
+					// margin-bottom: 15px
+					li
+						margin: 0
+				.nav-lg-hidden
+					display: none
+	.ul-level-1
+		overflow: auto
+		flex-direction: column
+	.a-level-2
+		i
+			font-size: 16px
+	.level-3
+		// display: none
+		padding-left: 20px
+	.nav-active
+		transform: translateX(0)
+		left: 0
+		z-index: 11
+		.nav-right
+			display: block
+			content: ''
+			position: fixed
+			top: 0
+			bottom: 0
+			left: 100%
+			width: 2000px
+			opacity: 1
+			// height: 100px
+			background-color: rgba(50, 50, 50, 0.5)
+	.nav-right
+		opacity: 0
+		transition: opacity 1s ease
+	.header-account
+		display: inline-block
+		vertical-align: middle
+		ul
+			li
+				margin-left: 30px
+				&:first-child
+					margin-left: 30px
+				.header-account-link
+					font-size: 24px
+					color: #767676
+					&:hover
+						color: $mainColor
+	.arrow
+		position: relative
+		a
+			i
+				// position: absolute
+				// right: 0
+				vertical-align: middle
+	.new-cards-img
+		padding: 0 26%
+	.close-nav
+		display: block
+	.search-field
+		display: none
+		width: auto
+		top: 105%
+		transform: translateY(0%)
+		left: 20%
+		right: 20%
+	.search-active
+		display: block
+
+
+
+// ≥992px
++media-breakpoint-down(md)
+	.new
+		padding: 50px 0
+	.popular
+		padding: 50px 0 0
+	.unnamed
+		.banner
+			padding: 50px 15px
+	.product-cards-item
+		.icons a
+			transform: translateY(0px)
+	.html-column-buttons
+		.button
+			width: 130px
+			height: 46px	
+	.html-column-description
+		h2
+			font-size: 2rem
+		h3
+			font-size: 1.25rem
+	.hero-slider
+		height: 450px
+		.figcaption
+			text-align: left
+			color: #fff
+			// position: absolute
+			// bottom: 40px
+			// left: 50px
+			h2
+				font-size: 2.5rem
+			h3
+				font-size: 1.5rem
+	.new-cards-img
+		padding: 0 15%
+	footer
+		padding: 48px 0 64px
+	.category-nav
+		.header-nav
+			width: 400px
+			height: 100%
+			position: fixed
+			left: 0
+			top: 0px
+			z-index: 100
+			background: #fff
+			&.close
+				transform: translateY(-100%)
+	
+// ≥768px
++media-breakpoint-down(sm)
+	.container-catalog
+		padding-right: 15px
+		padding-left: 15px
+	.container-wrapper
+		padding: 0 15px !important
+	.single-product-view-row
+		padding-top: 36px
+	.padding-scroll
+		padding: 0
+	.contacts, .social
+		h3
+			display: block
+	.social
+		i
+			font-size: 32px
+	footer, .footer
+		h3
+			display: block
+			&:after
+				font-family: "Font Awesome 5 Free"
+				font-weight: 900
+				content: '\f107'
+				position: absolute
+				right: 15px
+		h3.active + ul
+			display: block
+		ul
+			display: none
+			overflow: hidden
+			transition: 0.2s ease
+	.accordeon
+		font-size: 1.25rem
+	.banner
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		padding: 50px
+		[class$="-column"]
+			&:nth-child(1)
+				width: 45.85%
+			&:nth-child(2)
+				width: 54.15%
+			&:nth-child(3)
+				width: 100%
+			&:nth-child(4)
+				display: none
+			img
+				width: 100%
+	header
+		position: relative
+		.container-wrapper
+			padding: 0 15px
+	footer
+		.container-wrapper
+			padding: 0 15px
+	.checkout
+		.container-wrapper
+			padding: 0 15px
+		&-item-form
+			.btn-purple
+				width: 100%
+	.shopping-basket
+		.container-wrapper
+			padding: 0 15px
+	.header
+		padding: 10px 15px
+	.logo
+		a
+			max-width: 300px
+			margin: 0 auto
+	.html-column-buttons
+		.button
+			width: 122px
+			height: 43px
+	.html-column-description
+		padding: 30px 0
+	.hero-slider-button
+		right: 15px
+		height: 70px
+		[class^="swiper-button"] 
+			height: 100%
+			width: 70px
+			i
+				line-height: 70px
+		.hero-swiper-button-prev
+			&:after
+				content: ''
+				position: absolute
+				display: inline-block
+				width: 2px
+				height: 50px
+				top: 10px
+				right: -1px
+				background-color: #ebebeb
+		.hero-swiper-button-next
+			// right: 10px
+	#swiper-single-product
+		.swiper-button-next, .swiper-button-prev
+			display: none
+		.gallery-top
+			height: 360px
+		.gallery-thumbs
+			height: 110px
+	.single-product-info
+		h1
+			font-size: 26px
+	.single-product-price
+		margin-bottom: 24px
+	.breadcrumb-custom
+		display: none
+	.shopping-cart
+		width: 100%
+	.search-field
+		width: auto
+		top: 105%
+		left: 2%
+		right: 2%
+	.button-up
+		bottom: 10px
+// ≥576px
++media-breakpoint-down(xs)
+	.new-cards-padding > [class*="col"]
+		margin-top: 30px
+		[class*="col-xl"]:last-child
+			margin-top: 30px	
+	.hero-slider
+		.figcaption
+			text-align: left
+			color: #fff
+			// position: absolute
+			// bottom: 150px
+			// left: 50px
+			// padding: 50px 0
+			h2
+				font-size: 2.5rem
+			h3
+				font-size: 1.5rem
+	.new-cards-img
+		padding: 0 20%
+	.banner
+		[class$="-column"]
+			img
+				height: 200px
+	.price-item
+		padding: 0
+	.price
+		font-size: 1rem
+	.icons
+		a
+			font-size: 1rem
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

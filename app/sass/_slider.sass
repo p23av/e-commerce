@@ -1,0 +1,89 @@
+
+
+.hero-slider
+	width: 100%
+	height: 700px
+	position: relative
+	.figcaption
+		text-align: left
+		color: #fff
+		position: relative
+		// top: 0px
+		// left: 200px
+		// height: 250px
+		// padding: 50px
+		z-index: 2
+		h2
+			font-size: 2.5rem
+			letter-spacing: 0.02em
+			text-transform: uppercase
+			color: #fff
+			line-height: 1.25em
+			margin-bottom: 1em
+		h3
+			font-size: 1.5rem
+			color: #ddd
+			margin-bottom: 0.5em
+.hero-slider
+	.container-text
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		.container-wrapper
+			height: 100%
+			padding: 0
+			align-items: center
+.hero-slider .figure
+	width: 100%
+
+.hero-slider-button
+	position: absolute
+	height: 120px
+	right: 60px
+	bottom: 0
+	[class^="swiper-button"] 
+		position: relative
+		display: inline-block
+		margin: 0
+		height: 100%
+		width: 120px
+		background-color: #f8f8f8
+		transition: background-color 0.2s ease
+		text-align: center
+		&:hover
+			background-color: darken(#f8f8f8, 2%)
+			i
+				color: $shadeColor
+		i
+			vertical-align: middle
+			line-height: 120px
+			color: $mainColor
+			font-size: 20px
+			transition: color 0.2s ease
+	.swiper-button-prev
+		&:after
+			content: ''
+			position: absolute
+			display: inline-block
+			width: 2px
+			height: 60px
+			top: 30px
+			right: -1px
+			background-color: #ebebeb
+	.swiper-button-next
+	
+.hero-slider
+	a
+		display: block
+		height: 100%
+		.figure
+			height: 100%
+			img, video
+				object-fit: cover
+				object-position: center
+				width: 100%
+				height: 100%
+
+

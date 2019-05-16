@@ -1,0 +1,42 @@
+.my-account
+	width: 100%
+	margin: 0px auto 0px
+	height: 100vh
+	position: relative
+	.account-item
+		position: relative
+		top: 50%
+		transform: translateY(-50%)
+		width: 350px
+		margin: 0 auto
+		// padding: 30px 40px
+		// height: 100%
+		&-form
+			border: 1px solid #767676
+			border-radius: 6px
+			padding: 20px
+			width: 100%
+			margin-bottom: 15px
+			h2
+				text-align: center
+				font-size: 2rem
+			input
+				margin-bottom: 15px
+				padding: 5px 15px
+				border-radius: 4px
+			button
+				height: 50px
+				box-sizing: content-box
+		.check-in
+			border: 1px solid #767676
+			border-radius: 6px
+			p
+				text-align: center
+				padding: 15px 0
+				margin-bottom: 0
+				a
+					color: $mainColor
+.my-account .account-item-form input:focus
+	border: 1px solid #c92f67
+.my-account .account-item-form h2
+	margin-bottom: 24px
